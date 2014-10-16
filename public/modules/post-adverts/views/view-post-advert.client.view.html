@@ -1,0 +1,116 @@
+<section data-ng-controller="PostAdvertsController" data-ng-init="findOne()">
+
+
+    <div class="row">
+        <div>
+            <div class=" col-md-6  ">
+                <div class="page-header">
+                    <h1 data-ng-bind="postAdvert.title"></h1>
+                </div>
+                <div class='login-form-bg'>
+
+                    <div class="text-right price" style="display:inline-block">
+
+                        <h4>{{postAdvert.price | currency:"&#8358"}}</h4>
+                    </div>
+                    <div class="text-center">
+                        <img src="{{postAdvert.image}}">
+
+
+                    </div>
+
+                    <div>
+                        <h1 class="text-center">Details</h1>
+                        <div>
+                            <p>
+                                <strong>Description:</strong>&nbsp {{postAdvert.description}}</p>
+                            <p>
+                                <strong>Phone Number:</strong>&nbsp{{postAdvert.contact}}</p>
+                            <p>
+                                <strong>Email:</strong>&nbsp{{postAdvert.email}}</p>
+                            <p>
+                                <strong>Quantity:</strong>&nbsp {{postAdvert.stock}}</p>
+                            <p>
+                                <strong>Location:</strong>&nbsp {{postAdvert.location}}</p>
+                                <div class="pull-right" data-ng-show="authentication.user._id == postAdvert.user._id">
+                        <a ng-click="advertUpdate('lg', postAdvert)" class="btn btn-primary">
+                            <i class="glyphicon glyphicon-edit"></i>
+                        </a>
+                        <a class="btn btn-primary" data-ng-click="remove();">
+                            <i class="glyphicon glyphicon-trash"></i>
+                        </a>
+                    </div>
+                        </div>
+                        <div class="text-center">
+
+
+
+                            Posted on
+                            <span data-ng-bind="postAdvert.created | date:'mediumDate'"></span>
+                            by
+                            <span data-ng-bind="postAdvert.user.displayName"></span>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+                <div>
+                    <form class="form-horizontal" data-ng-submit="addComment()" novalidate>
+                        <fieldset>
+                            <div class="form-group">
+                                <label class="control-label" for="comment">Comment</label>
+                                <div class="controls">
+                                    <input type="textarea" data-ng-model="name" id="name" class="form-control" placeholder="Your Comment" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-default" value="Comment">
+                            </div>
+                            <div data-ng-show="error" class="text-danger">
+                                <strong data-ng-bind="error"></strong>
+                            </div>
+                        </fieldset>
+                    </form>
+
+                    
+                </div>
+
+
+
+            </div>
+        </div>
+        <div data-ng-controller="CommentsController" data-ng-init="findComments()" class="col-md-4 pull-right">
+        	<div class="colo-xs-12 col-sm-2 col-md-4 text-center">
+            <a ng-click="advertCreate('lg', postAdvert)">
+        <button class="btn btn-success text-center NewAdvert" type="button">
+            <i class="glyphicon glyphicon-user"></i><br>
+            New Advert
+        </button>
+        </a>
+        </div>
+            <div class="page-header">
+                <br>
+                <br>
+                <h1>Comments</h1>
+
+            </div>
+            <div class="list-group login-form-bg">
+                <a data-ng-repeat="comment in comments" data-ng-href="#" class="list-group-item">
+                    <small class="list-group-item-text">
+                        Posted on
+                        <span data-ng-bind="comment.created | date:'medium'"></span>
+                        by
+                        <span data-ng-bind="comment.user.displayName"></span>
+                    </small>
+                    <h4 class="list-group-item-heading" data-ng-bind="comment.body"></h4>
+                </a>
+            </div>
+        </div>
+
+    </div>
+    </div>
+    </div>
+</section>

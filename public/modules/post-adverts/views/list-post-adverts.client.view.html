@@ -1,0 +1,19 @@
+<section data-ng-controller="PostAdvertsController" data-ng-init="find()">
+    <div class="page-header">
+        <h1>Post adverts</h1>
+    </div>
+    <div class="list-group">
+        <a data-ng-repeat="postAdvert in postAdverts" data-ng-href="#!/post-adverts/{{postAdvert._id}}" class="list-group-item">
+			<small class="list-group-item-text">
+				Posted on
+				<span data-ng-bind="postAdvert.created | date:'medium'"></span>
+				by
+				<span data-ng-bind="postAdvert.user.displayName"></span>
+			</small>
+			<h4 class="list-group-item-heading" data-ng-bind="postAdvert.name"></h4>
+        </a>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!postAdverts.$resolved || postAdverts.length">
+    	No Post adverts yet, why don't you <a href="/#!/post-adverts/create">create one</a>?
+    </div>
+</section>

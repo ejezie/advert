@@ -1,0 +1,57 @@
+<section data-ng-controller="PostAdvertsController" data-ng-init="find()">
+
+    <div class="list-group">
+        <div class="row searchDiv">
+            <div class="col-xs-12 col-sm-4 col-md-4 text-center searchBar">
+                <div>
+                    <h3 class="freeAd">Free Advert for Everyone</h3>
+                </div>
+            </div>
+            <div class="colo-xs-12 col-sm-2 col-md-4 text-center">
+                <a ng-click="advertCreate('lg', postAdvert)">
+                    <button class="btn-success text-center NewAdvert" type="button">
+                        <i class="glyphicon glyphicon-user"></i>
+                        <br>New Advert
+                    </button>
+                </a>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 text-center newAdvert">
+                <div class="input-group input-group-large">
+                    <input type="text" class="form-control" ng-model="searchText" placeholder="Search...">
+                    <span class="input-group-addon">
+                        <i class="text-muted glyphicon glyphicon-search"></i>
+                    </span>
+                </div>
+
+            </div>
+        </div>
+        <br>
+        <div class="col-xs-6 col-sm-4 adContainer" data-ng-repeat="postAdvert in postAdverts | filter:searchText">
+            <a data-ng-href="#!/post-adverts/{{postAdvert._id}}" class="list-group-item">
+                <div class="row">
+                    <div class="col-xs-10 col-xs-offset-1 text-center ">
+                        <div class="text-right price" style="display:inline-block">
+
+                            <h4>{{postAdvert.price | currency:"&#8358"}}</h4>
+                        </div>
+                        <img ng-src="{{postAdvert.image}}" class="img-responsive" alt="Responsive image" id="adImage">
+
+                        <small class="list-group-item-text ">
+                            <div class="row adTitle">
+                                <div class="col-sm-8">{{postAdvert.title}}</div>
+                                <div class="col-sm-4">
+                                    <span data-ng-bind="postAdvert.comments.length"></span>
+                                    Comment
+                                </div>
+                            </div>
+                        </small>
+                    </div>
+                </div>
+                <h4 class="list-group-item-heading" data-ng-bind="postAdvert.name"></h4>
+            </a>
+        </div>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!postAdverts.$resolved || postAdverts.length">
+        No Post adverts yet, why don't you <a href="/#!/post-adverts/create">create one</a>?
+    </div>
+</section>

@@ -1,0 +1,114 @@
+<section data-ng-controller="PostAdvertsController">
+    <div class="modalheader">
+        <h3 class="modal-title">&nbsp New Advert</h3>
+    </div>
+    <div class="modal-body">
+        <form name="updateAdvertForm">
+            <fieldset>
+                <div class="row">
+
+                    <div class="col-sm-6 text-center">
+                        <img src="modules/core/img/brand/logo-01.jpg" class="img-responsive" alt="Responsive image" id="adImage">
+
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label" for="image">Product Photo</label>
+                            <div class="controls">
+                                <input type="file" data-ng-file-select="onSelectFile($files)" id="image" class="form-control" multiple accept="image/png, image/jpeg">
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label" for="title">Advert Title</label>
+                            <div class="controls">
+                                <input type="text" data-ng-model="title" id="title" class="form-control" placeholder="title">
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="description">Description</label>
+                            <div class="controls">
+                                <input type="text" data-ng-model="description" id="name" class="form-control" placeholder="Describle your product" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label" for="price">Price</label>
+                            <div class="controls">
+                                <input type="text" data-ng-model="price" id="name" class="form-control" placeholder="Cost of Product" required>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-sm-6 col-sm-push-6">
+                        <div class="form-group">
+                            <label class="control-label" for="contact">Contact No</label>
+                            <div class="controls">
+                                <input type="text" data-ng-model="contact" id="name" class="form-control" placeholder="Phone number for buyers to contact you" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label" for="email">Email</label>
+                            <div class="controls">
+                                <input type="text" data-ng-model="email" id="name" class="form-control" placeholder="email" required>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="col-sm-6 col-sm-pull-6">
+
+
+                        <div class="form-group">
+                            <label class="control-label" for="location">location</label>
+                            <div class="controls">
+                                <input type="text" data-ng-model="location" id="name" class="form-control" placeholder="location" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label" for="stock">Available Stock</label>
+                            <div class="controls">
+                                <input type="text" data-ng-model="stock" id="name" class="form-control" placeholder="Number of stock available" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label" for="address">Address</label>
+                            <div class="controls">
+                                <input type="text" data-ng-model="address" id="name" class="form-control" placeholder="Your address" required>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-sm-6">
+                    <div class="modal-footer">
+                        <button class="btn btn-success" ng-click="create();ok()">OK</button>
+                        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+                    </div>
+
+
+                </div>
+    </div>
+    </div>
+    </fieldset>
+    </div>
+
+    </div>

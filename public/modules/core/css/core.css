@@ -1,0 +1,102 @@
+.content {
+	margin-top: 50px;
+}
+.undecorated-link:hover {
+	text-decoration: none;
+}
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+	display: none !important;
+}
+.ng-invalid.ng-dirty{
+    border-color:#FA787E;
+}
+.ng-valid.ng-dirty{
+    border-color:#78FA89;
+}
+
+
+.advert-image {
+	font-size: 250px;
+}
+
+.searchBar, .newAdvert {
+	margin-top: 20px;
+	margin-bottom: 15px;
+}
+
+.page-header {
+	text-align: center;
+}
+
+/*.adContainer {
+	height: 250px;
+}
+*/
+
+.price{
+	background-color: yellow;
+	padding: 0 10px;
+	float: right;
+	margin-bottom: 5px;
+}
+
+.adTitle{
+	padding-top: 8px;
+}
+.viewImage {
+	text-align: center;
+}
+.imgCont{
+	margin-right: 50px;
+}
+.commentDisplay{
+text-align: center;
+}
+.headerPage {
+	background-color: #525252;
+
+}
+.headerPage a {
+	color: #fff;
+}
+
+.headerPage a:hover {
+	background-color: #8e8e8e;
+}
+
+
+
+.searchDiv {
+	margin-bottom: 20px;
+	background-color: #fff;
+	/*opacity: .6;*/
+	border-radius: 5px; 
+	color: black;
+	vertical-align: top;
+}
+
+.freeAd{
+	vertical-align: middle;
+	float: left;
+	font-size: 24px;
+	font-family: 'Josefin Slab';
+	margin-top: 0;
+}
+.NewAdvert {
+	border-radius: 5px;
+	vertical-align: top;
+	margin-top: 10px;
+}
+.NewAdvert a {
+	color: black;
+	text-decoration: none;
+}
+
+.img-responsive{
+	height: 250px;
+}
+
+.adContainer{
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
